@@ -1,0 +1,508 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 1rem 2rem;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+}
+
+nav ul li {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #1abc9c;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #34495e;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    color: white;
+    padding: 0.75rem 1rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #1abc9c;
+}
+
+/* Main Section Styles */
+main {
+    padding: 2rem 2rem;
+    background-color: #fff;
+}
+
+section {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+section p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Buttons */
+button {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.75rem 2rem;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+form input, form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form textarea {
+    resize: none;
+    height: 100px;
+}
+
+form button {
+    width: 100%;
+    background-color: #2c3e50;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+
+
+/* Member Registration Section */
+
+.registration {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.registration h2 {
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.registration form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.registration form label {
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+}
+
+.registration form input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.registration form button {
+    padding: 0.75rem;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.registration form button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+/* Feedback Messages */
+.success {
+    color: #28a745;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+
+/* Member Login Section */
+
+.login {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #2c3e50;
+}
+
+.login p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login form label {
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+}
+
+.login form input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login form input:focus {
+    border-color: #1abc9c;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+}
+
+.login form button {
+    padding: 0.75rem;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login form button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.login p a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login p a:hover {
+    color: #16a085;
+}
+
+/* General Layout */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main Content Area */
+main {
+    flex: 1; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: #fff;
+    font-size: 0.9rem;
+    border-top: 3px solid #1abc9c;
+    position: relative; /* Ensure footer doesn't overlap the main content */
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login {
+        margin: 1rem auto;
+        padding: 1.5rem;
+    }
+
+    .login h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+/* Authority Login Page */
+.login {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #2c3e50;
+}
+
+.login p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login form label {
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+}
+
+.login form input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login form button {
+    padding: 0.75rem;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login form button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.login p.error {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 0.75rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* General Layout */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main Content Area */
+main {
+    flex: 1; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #2c3e50;
+    color: #fff;
+    font-size: 0.9rem;
+    border-top: 3px solid #1abc9c;
+    position: relative; /* Ensure footer doesn't overlap the main content */
+    width: 100%;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav ul li {
+        transform: none; 
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
