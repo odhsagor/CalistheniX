@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['nutritionist_email'] = $nutritionist['email'];
 
             // Redirect to nutritionist dashboard
-            header("Location: nutritionist_dashboard.php");
+            header("Location: nutritionists_dashboard.php");
             exit;
         } else {
             // Incorrect password
