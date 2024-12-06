@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2024 at 07:58 AM
+-- Generation Time: Dec 06, 2024 at 05:49 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -69,6 +69,28 @@ INSERT INTO `calorie_logs` (`id`, `member_id`, `item_name`, `protein`, `carbs`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `diet_plans`
+--
+
+CREATE TABLE `diet_plans` (
+  `id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `nutritionist_id` int(11) NOT NULL,
+  `plan` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `diet_plans`
+--
+
+INSERT INTO `diet_plans` (`id`, `member_id`, `nutritionist_id`, `plan`, `created_at`) VALUES
+(1, 3, 1, 'skdskd', '2024-12-06 16:36:11'),
+(2, 3, 1, 'fsfs', '2024-12-06 16:47:17');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `exercise_plans`
 --
 
@@ -110,7 +132,8 @@ CREATE TABLE `members` (
 INSERT INTO `members` (`id`, `name`, `email`, `phone`, `dob`, `password`, `created_at`) VALUES
 (1, 'sagor', 'sagor@gmail.com', '01928287771', '1998-01-05', '$2y$10$ZHZrteWdKOBocTCAumro7OpBNtOrRFI9qN6uo0GzbAfwAOiIS8rEG', '2024-12-05 06:39:25'),
 (2, 'Anik', 'anik@gmail.com', '01829182', '2024-12-04', '$2y$10$DLgc/UWN3Wj04KswYhIulu.6rnmZ6NVUDQOcOdbStugoikuAYRQoK', '2024-12-05 07:23:25'),
-(3, 'osagor', 'osagor@gmail.com', '01381039193', '2001-01-05', '$2y$10$vI/rrLH6CioU/chsAlVM.uiyHDXVdkwqUULthcr5FciJM4wHGcCYG', '2024-12-05 11:30:36');
+(3, 'osagor', 'osagor@gmail.com', '01381039193', '2001-01-05', '$2y$10$vI/rrLH6CioU/chsAlVM.uiyHDXVdkwqUULthcr5FciJM4wHGcCYG', '2024-12-05 11:30:36'),
+(4, 'Hossain', 'hossain@gmail.com', '0182912821', '2004-01-06', '$2y$10$ss9h1j17HpF.eiOrxpzniOATUuEC.LkMfvnlvIn1z7QMUcXM40MnS', '2024-12-06 08:55:08');
 
 -- --------------------------------------------------------
 
@@ -151,6 +174,26 @@ CREATE TABLE `nutritionists` (
 
 INSERT INTO `nutritionists` (`id`, `name`, `email`, `password`) VALUES
 (1, 'Sagor', 'sagor@gmail.com', '@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nutritionists_guidance`
+--
+
+CREATE TABLE `nutritionists_guidance` (
+  `id` int(11) NOT NULL,
+  `nutritionist_id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `diet_plan` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `nutritionists_guidance`
+--
+
+INSERT INTO `nutritionists_guidance` (`id`, `nutritionist_id`, `member_id`, `diet_plan`) VALUES
+(1, 1, 3, 'Diet Plan');
 
 -- --------------------------------------------------------
 
@@ -215,6 +258,14 @@ ALTER TABLE `calorie_logs`
   ADD KEY `member_id` (`member_id`);
 
 --
+-- Indexes for table `diet_plans`
+--
+ALTER TABLE `diet_plans`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `member_id` (`member_id`),
+  ADD KEY `nutritionist_id` (`nutritionist_id`);
+
+--
 -- Indexes for table `exercise_plans`
 --
 ALTER TABLE `exercise_plans`
@@ -243,6 +294,14 @@ ALTER TABLE `member_trainer`
 ALTER TABLE `nutritionists`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `nutritionists_guidance`
+--
+ALTER TABLE `nutritionists_guidance`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nutritionist_id` (`nutritionist_id`),
+  ADD KEY `member_id` (`member_id`);
 
 --
 -- Indexes for table `subscriptions`
@@ -274,6 +333,12 @@ ALTER TABLE `calorie_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `diet_plans`
+--
+ALTER TABLE `diet_plans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `exercise_plans`
 --
 ALTER TABLE `exercise_plans`
@@ -283,7 +348,7 @@ ALTER TABLE `exercise_plans`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `member_trainer`
@@ -295,6 +360,12 @@ ALTER TABLE `member_trainer`
 -- AUTO_INCREMENT for table `nutritionists`
 --
 ALTER TABLE `nutritionists`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `nutritionists_guidance`
+--
+ALTER TABLE `nutritionists_guidance`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -320,6 +391,13 @@ ALTER TABLE `calorie_logs`
   ADD CONSTRAINT `calorie_logs_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`);
 
 --
+-- Constraints for table `diet_plans`
+--
+ALTER TABLE `diet_plans`
+  ADD CONSTRAINT `diet_plans_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `diet_plans_ibfk_2` FOREIGN KEY (`nutritionist_id`) REFERENCES `nutritionists` (`id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `exercise_plans`
 --
 ALTER TABLE `exercise_plans`
@@ -332,6 +410,13 @@ ALTER TABLE `exercise_plans`
 ALTER TABLE `member_trainer`
   ADD CONSTRAINT `member_trainer_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`),
   ADD CONSTRAINT `member_trainer_ibfk_2` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`);
+
+--
+-- Constraints for table `nutritionists_guidance`
+--
+ALTER TABLE `nutritionists_guidance`
+  ADD CONSTRAINT `nutritionists_guidance_ibfk_1` FOREIGN KEY (`nutritionist_id`) REFERENCES `nutritionists` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `nutritionists_guidance_ibfk_2` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
