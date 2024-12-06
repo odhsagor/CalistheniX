@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 05, 2024 at 07:39 PM
+-- Generation Time: Dec 06, 2024 at 07:58 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -65,6 +65,27 @@ CREATE TABLE `calorie_logs` (
 
 INSERT INTO `calorie_logs` (`id`, `member_id`, `item_name`, `protein`, `carbs`, `fat`, `calories`, `water`, `log_date`) VALUES
 (1, 3, 'Fish', 4, 1, 0, 12, 1, '2024-12-05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exercise_plans`
+--
+
+CREATE TABLE `exercise_plans` (
+  `id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `trainer_id` int(11) NOT NULL,
+  `plan` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `exercise_plans`
+--
+
+INSERT INTO `exercise_plans` (`id`, `member_id`, `trainer_id`, `plan`, `created_at`) VALUES
+(1, 1, 1, 'Regular exercise is one of the best things you can do for your health. However, working it into your routine and sticking with it can take some determination and discipline. Certain strategies can help you keep it up.\r\n\r\n', '2024-12-06 06:44:54');
 
 -- --------------------------------------------------------
 
@@ -194,6 +215,14 @@ ALTER TABLE `calorie_logs`
   ADD KEY `member_id` (`member_id`);
 
 --
+-- Indexes for table `exercise_plans`
+--
+ALTER TABLE `exercise_plans`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `member_id` (`member_id`),
+  ADD KEY `trainer_id` (`trainer_id`);
+
+--
 -- Indexes for table `members`
 --
 ALTER TABLE `members`
@@ -245,6 +274,12 @@ ALTER TABLE `calorie_logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `exercise_plans`
+--
+ALTER TABLE `exercise_plans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
@@ -283,6 +318,13 @@ ALTER TABLE `trainers`
 --
 ALTER TABLE `calorie_logs`
   ADD CONSTRAINT `calorie_logs_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`);
+
+--
+-- Constraints for table `exercise_plans`
+--
+ALTER TABLE `exercise_plans`
+  ADD CONSTRAINT `exercise_plans_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`),
+  ADD CONSTRAINT `exercise_plans_ibfk_2` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`);
 
 --
 -- Constraints for table `member_trainer`
