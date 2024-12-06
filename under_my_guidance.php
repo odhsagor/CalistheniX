@@ -127,6 +127,7 @@ p {
                     <th>Email</th>
                     <th>Phone</th>
                     <th>DOB</th>
+                    <th>Give plan</th>
                 </tr>
             </thead>
             <tbody>
@@ -137,9 +138,16 @@ p {
                         <td><?php echo htmlspecialchars($row['email']); ?></td>
                         <td><?php echo htmlspecialchars($row['phone']); ?></td>
                         <td><?php echo htmlspecialchars($row['dob']); ?></td>
+                        <td>
+                            <form action="assign_plan.php" method="POST">
+                                <input type="hidden" name="member_id" value="<?php echo $row['id']; ?>">
+                                <button type="submit">Assign Plan</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
+
         </table>
     </main>
 </body>

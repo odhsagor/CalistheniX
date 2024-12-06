@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-// Check if the nutritionist is already logged in
-if (isset($_SESSION['nutritionist_id'])) {
-    header("Location: nutritionist_dashboard.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

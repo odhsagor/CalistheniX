@@ -153,6 +153,7 @@ p {
                     <th>Name</th>
                     <th>Email</th>
                     <th>Action</th>
+                    <th>view Plan</th>
                 </tr>
             </thead>
             <tbody>
@@ -164,6 +165,12 @@ p {
                             <form method="POST">
                                 <input type="hidden" name="trainer_id" value="<?php echo $row['id']; ?>">
                                 <button type="submit">Choose</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="view_plan.php" method="POST">
+                                <input type="hidden" name="member_id" value="<?php echo $row['id']; ?>">
+                                <button type="submit">view Plan</button>
                             </form>
                         </td>
                     </tr>
