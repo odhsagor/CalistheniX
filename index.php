@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Website</title>
+    <title>CalistheniX Fitness Center</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <header>
@@ -29,49 +29,37 @@
     </nav>
 </header>
 
+<main>
+    <!-- Slider Section -->
+    <section class="slider">
+        <div class="slides">
+            <img src="images/2.png" alt="Fitness 1">
+            <img src="images/2.png" alt="Fitness 2">
+            <img src="images/2.png" alt="Fitness 3">
+        </div>
+    </section>
 
-    <main>
-        <section id="home">
-            <h2>Welcome to Fitness Center</h2>
-            <p>Your health, our priority. Join us today!</p>
-            <button>Get Started</button>
-        </section>
+    <!-- Discount Section -->
+    <section class="discount">
+        <h2>Special Offer</h2>
+        <p>Join today and get <strong>10% OFF</strong> on your first month!</p>
+        <a href="member_registration.php" class="btn">Claim Offer</a>
+    </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We provide state-of-the-art facilities and personalized training programs.</p>
-        </section>
+    <!-- Gym Photos Section -->
+    <section class="gym-photos">
+        <h2>Our Facilities</h2>
+        <div class="photo-grid">
+            <img src="images/01.png" alt="Gym Photo 1">
+            <img src="images/02.png" alt="Gym Photo 2">
+            <img src="images/03.png" alt="Gym Photo 3">
+            <img src="images/04.png" alt="Gym Photo 4">
+        </div>
+    </section>
+</main>
 
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Personal Training</li>
-                <li>Group Classes</li>
-                <li>Dietary Advice</li>
-            </ul>
-        </section>
-
-        <section id="membership">
-            <h2>Membership Plans</h2>
-            <p>Choose the plan that fits you best.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="process_form.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Fitness Center. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>&copy; <?php echo date("Y"); ?> CalistheniX Fitness Center. All rights reserved.</p>
+</footer>
 </body>
 </html>

@@ -32,41 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['member_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutritionist Dashboard</title>
-    <link rel="stylesheet" href="css/nutritionist_dashboard.css">
+    <link rel="stylesheet" href="css/nutritionists_dashboard.css">
     <style>
-       /* Add some attractive styles for the page */
-       body {
-           font-family: Arial, sans-serif;
-           margin: 0;
-           padding: 0;
-           background-color: #f9f9f9;
-       }
-
-       header {
-           display: flex;
-           align-items: center;
-           justify-content: space-between;
-           padding: 1rem 2rem;
-           background-color: #4CAF50;
-           color: white;
-       }
-
-       nav ul {
-           list-style: none;
-           margin: 0;
-           padding: 0;
-           display: flex;
-       }
-
-       nav ul li {
-           margin: 0 1rem;
-       }
-
-       nav ul li a {
-           text-decoration: none;
-           color: white;
-           font-weight: bold;
-       }
 
        h1 {
            text-align: center;
@@ -110,16 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['member_id'])) {
            background-color: #45a049;
        }
 
-       footer {
-           text-align: center;
-           margin-top: 2rem;
-           padding: 1rem 0;
-           background-color: #4CAF50;
-           color: white;
-           position: fixed;
-           bottom: 0;
-           width: 100%;
-       }
     </style>
 </head>
 <body>
@@ -131,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['member_id'])) {
             <ul>
                 <li><a href="nutritionists_dashboard.php">Dashboard</a></li>
                 <li><a href="nutritionists_guidance.php">Under My Guidance</a></li>
-                <li><a href="nutritionists_login.php">Logout</a></li>
+                <li><a href="nutritionist_login.php">Logout</a></li>
             </ul>
         </nav>
     </header>

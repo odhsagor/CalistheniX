@@ -40,18 +40,21 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Under My Guidance</title>
-    <link rel="stylesheet" href="css/nutritionist_dashboard.css">
+    <link rel="stylesheet" href="css/nutritionists_dashboard.css">
     <style>
         /* Add your attractive CSS here */
     </style>
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="images/CalistheniX.png" alt="Fitness Center Logo" class="logo-img">
+        </div>
         <nav>
             <ul>
                 <li><a href="nutritionists_dashboard.php">Dashboard</a></li>
                 <li><a href="nutritionists_guidance.php">Under My Guidance</a></li>
-                <li><a href="nutritionists_login.php">Logout</a></li>
+                <li><a href="nutritionist_login.php">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -86,5 +89,9 @@ $conn->close();
             </tbody>
         </table>
     </main>
+
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Fitness Center. All rights reserved.</p>
+    </footer>
 </body>
 </html>

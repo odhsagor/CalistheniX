@@ -99,9 +99,9 @@ if (!isset($_SESSION['member_id'])) {
             <ul>
                 <li><a href="member_dashboard.php">Home</a></li>
                 <li><a href="trainer_list.php">Trainer</a></li>
-                <li><a href="nutritionist_list.php">Nutritionist</a></li>
+                <li><a href="nutritionists_list.php">Nutritionist</a></li>
                 <li><a href="bmi_calculator.php">BMI</a></li>
-                <li><a href="diet_plan.php">Diet Plan</a></li>
+                <li><a href="view_diet_plan.php">Diet Plan</a></li>
                 <li><a href="memberSubscription.php">Subscription</a></li>
                 <li><a href="calorie_tracker.php">Consume Calories</a></li>
                 <li><a href="member_login.php">Logout</a></li>

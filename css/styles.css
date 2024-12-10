@@ -8,6 +8,20 @@ body {
     color: #333;
 }
 
+
+
+/*New code*/
+
+
+
+
+/*New Code End*/
+
+
+
+
+
+
 h1, h2, h3 {
     margin: 0;
     font-weight: 600;
@@ -372,7 +386,7 @@ footer {
     color: #fff;
     font-size: 0.9rem;
     border-top: 3px solid #1abc9c;
-    position: relative; /* Ensure footer doesn't overlap the main content */
+    position: relative; 
     width: 100%;
 }
 
@@ -479,7 +493,7 @@ footer {
     color: #fff;
     font-size: 0.9rem;
     border-top: 3px solid #1abc9c;
-    position: relative; /* Ensure footer doesn't overlap the main content */
+    position: relative; 
     width: 100%;
 }
 
