@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 06, 2024 at 05:49 PM
+-- Generation Time: Dec 10, 2024 at 09:34 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -86,7 +86,8 @@ CREATE TABLE `diet_plans` (
 
 INSERT INTO `diet_plans` (`id`, `member_id`, `nutritionist_id`, `plan`, `created_at`) VALUES
 (1, 3, 1, 'skdskd', '2024-12-06 16:36:11'),
-(2, 3, 1, 'fsfs', '2024-12-06 16:47:17');
+(2, 3, 1, 'fsfs', '2024-12-06 16:47:17'),
+(3, 1, 1, 'eat this and this', '2024-12-10 07:44:54');
 
 -- --------------------------------------------------------
 
@@ -193,7 +194,8 @@ CREATE TABLE `nutritionists_guidance` (
 --
 
 INSERT INTO `nutritionists_guidance` (`id`, `nutritionist_id`, `member_id`, `diet_plan`) VALUES
-(1, 1, 3, 'Diet Plan');
+(1, 1, 3, 'Diet Plan'),
+(2, 1, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -336,7 +338,7 @@ ALTER TABLE `calorie_logs`
 -- AUTO_INCREMENT for table `diet_plans`
 --
 ALTER TABLE `diet_plans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `exercise_plans`
@@ -366,7 +368,7 @@ ALTER TABLE `nutritionists`
 -- AUTO_INCREMENT for table `nutritionists_guidance`
 --
 ALTER TABLE `nutritionists_guidance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `subscriptions`
