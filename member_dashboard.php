@@ -11,7 +11,6 @@ if (!isset($_SESSION['member_id'])) {
 $member_name = isset($_SESSION['member_name']) ? $_SESSION['member_name'] : "Member";
 ?>
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
