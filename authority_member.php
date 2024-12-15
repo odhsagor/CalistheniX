@@ -1,5 +1,4 @@
 <?php
-// Start session to check if user is logged in
 session_start();
 if (!isset($_SESSION['authority_id'])) {
     header("Location: authority_login.php?error=Please log in first.");
@@ -23,8 +22,9 @@ if (!isset($_SESSION['authority_id'])) {
         <nav>
             <ul>
                 <li><a href="authority_dashboard.php">Dashboard</a></li>
-                <li><a href="showTotalMembers.php">Show Total Member</a></li>
-                <li><a href="AuthorityGiveSubscription.php">Create And Update Subscription Price</a></li>
+                <li><a href="showTotalMembers.php">Show Member By Trainer</a></li>
+                <li><a href="showMemberNutritionist.php">Show Member By Nutritionist</a></li>
+                <li><a href="AuthorityGiveSubscription.php">Subscription</a></li>
                 <li><a href="authority_login.php">Logout</a></li>
             </ul>
         </nav>
