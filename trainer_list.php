@@ -69,59 +69,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trainer List</title>
-    <link rel="stylesheet" href="css/authoritydashboard.css">
+    <link rel="stylesheet" href="css/trainer_list.css">
 </head>
-<style>
-/* Table Styling */
-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 2rem 0;
-    background-color: #ffffff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-thead {
-    background-color: #4CAF50;
-    color: white;
-}
-th, td {
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid #ddd;
-}
-th {
-    font-weight: bold;
-}
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-tr:hover {
-    background-color: #eaf8e6;
-    cursor: pointer;
-}
-/* Button Styling */
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background-color: #45a049;
-}
-/* Message Styling */
-p {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #4CAF50;
-    font-weight: bold;
-    margin: 1rem 0;
-} 
-</style>
 <body>
     <header>
         <div class="logo">

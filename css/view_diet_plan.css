@@ -1,0 +1,136 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+}
+
+header .logo {
+    text-align: center;
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+nav {
+    background-color: #1abc9c;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #16a085;
+    border-radius: 5px;
+}
+
+/* Main content styles */
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+main h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+main p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 1rem 0;
+    white-space: pre-wrap; /* Preserves line breaks in the content */
+}
+
+main small {
+    font-size: 0.9rem;
+    color: #888;
+    display: block;
+    margin-top: 1rem;
+}
+
+main div {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2rem 0;
+}
+
+/* For the "No plans assigned yet" message */
+main p.no-plans {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: bold;
+}
+
+
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
