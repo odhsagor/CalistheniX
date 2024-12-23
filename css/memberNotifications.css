@@ -1,0 +1,168 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+}
+
+header .logo {
+    text-align: center;
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+nav {
+    background-color: #1abc9c;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #16a085;
+    border-radius: 5px;
+}
+
+/* Main content styles */
+main {
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+/* Fitness messages styles */
+.fitness-messages ul {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.fitness-messages ul li {
+    background: #444;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+
+
+
+/* Main Section Styling */
+main {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Notification List Styling */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main ul li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Notification Message Styling */
+main ul li p {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+/* View Details Link Styling */
+main ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+main ul li a:hover {
+    background-color: #45a049;
+}
+
+/* Timestamp Styling */
+main ul li small {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* No Notifications Message Styling */
+main p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+
+
+
+
+
+/* Footer styles */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

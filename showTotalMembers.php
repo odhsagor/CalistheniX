@@ -7,15 +7,13 @@ if (!isset($_SESSION['authority_id'])) {
     exit;
 }
 
-// Database connection (replace with your actual credentials)
+// Database connection
 $servername = "localhost";
 $username = "root";
 $password_db = "";
 $dbname = "CalistheniX_db";
 
 $conn = new mysqli($servername, $username, $password_db, $dbname);
-
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -58,19 +56,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['member_id'], $_POST['t
     }
 
     if ($stmt->execute()) {
+        // Add notification
+        $notifSql = "INSERT INTO notifications (member_id, message, link) VALUES (?, ?, ?)";
+        $notifStmt = $conn->prepare($notifSql);
+        $notifMessage = "Admin updated your trainer. Your trainer has been changed.";
+        $notifLink = "trainer_list.php";
+        $notifStmt->bind_param("iss", $member_id, $notifMessage, $notifLink);
+        $notifStmt->execute();
+
         $message = "Trainer updated successfully!";
     } else {
         $message = "Failed to update trainer.";
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total Members</title>
+    <title>Manage Members</title>
     <link rel="stylesheet" href="css/authoritydashboard.css">
     <style>
         main {
@@ -127,15 +132,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['member_id'], $_POST['t
         <nav>
             <ul>
                 <li><a href="authority_dashboard.php">Dashboard</a></li>
-                <li><a href="showTotalMembers.php">Show Member By Trainer</a></li>
-                <li><a href="showMemberNutritionist.php">Show Member By Nutritionist</a></li>
+                <li><a href="showTotalMembers.php">Show Members by Trainer</a></li>
+                <li><a href="showMemberNutritionist.php">Show Members by Nutritionist</a></li>
                 <li><a href="AuthorityGiveSubscription.php">Subscription</a></li>
                 <li><a href="authority_login.php">Logout</a></li>
             </ul>
         </nav>
     </header>
 <main>
-    <h2>List of Members</h2>
+    <h1>List of Members and Their Trainers</h1>
     <?php if (isset($message)) echo "<p class='message'>$message</p>"; ?>
     <table>
         <thead>
@@ -146,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['member_id'], $_POST['t
                 <th>Phone</th>
                 <th>Date of Birth</th>
                 <th>Assigned Trainer</th>
-                <th>Choose</th>
+                <th>Assign Trainer</th>
             </tr>
         </thead>
         <tbody>

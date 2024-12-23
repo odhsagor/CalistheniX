@@ -14,8 +14,6 @@ $password_db = "";
 $dbname = "CalistheniX_db";
 
 $conn = new mysqli($servername, $username, $password_db, $dbname);
-
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -58,12 +56,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['member_id'], $_POST['n
     }
 
     if ($stmt->execute()) {
+        // Add notification
+        $notifSql = "INSERT INTO notifications (member_id, message, link) VALUES (?, ?, ?)";
+        $notifStmt = $conn->prepare($notifSql);
+        $notifMessage = "Admin updated your nutritionist. Your nutritionist has been changed.";
+        $notifLink = "nutritionists_list.php";
+        $notifStmt->bind_param("iss", $member_id, $notifMessage, $notifLink);
+        $notifStmt->execute();
+
         $message = "Nutritionist updated successfully!";
     } else {
         $message = "Failed to update nutritionist.";
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -127,15 +132,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['member_id'], $_POST['n
         <nav>
             <ul>
                 <li><a href="authority_dashboard.php">Dashboard</a></li>
-                <li><a href="showTotalMembers.php">Show Member By Trainer</a></li>
-                <li><a href="showMemberNutritionist.php">Show Member By Nutritionist</a></li>
+                <li><a href="showTotalMembers.php">Show Members by Trainer</a></li>
+                <li><a href="showMemberNutritionist.php">Show Members by Nutritionist</a></li>
                 <li><a href="AuthorityGiveSubscription.php">Subscription</a></li>
                 <li><a href="authority_login.php">Logout</a></li>
             </ul>
         </nav>
     </header>
 <main>
-    <h2>List of Members and Nutritionists</h2>
+    <h1>List of Members and Their Nutritionists</h1>
     <?php if (isset($message)) echo "<p class='message'>$message</p>"; ?>
     <table>
         <thead>
@@ -146,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['member_id'], $_POST['n
                 <th>Phone</th>
                 <th>Date of Birth</th>
                 <th>Assigned Nutritionist</th>
-                <th>Choose Nutritionist</th>
+                <th>Assign Nutritionist</th>
             </tr>
         </thead>
         <tbody>
