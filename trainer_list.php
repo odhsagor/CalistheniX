@@ -9,9 +9,9 @@ if (!isset($_SESSION['member_id'])) {
 
 // Database connection
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "CalistheniX_db";
+$username = "calisthe_CalistheniX_db_user";
+$password_db = "zI3t=Pa94uG#";
+$dbname = "calisthe_CalistheniX_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
